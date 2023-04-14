@@ -27,9 +27,9 @@ id -nG
 docker pull continuumio/anaconda3
 ```
 ### Launch Docker container
-The container is starting as root user. Also, port 8888 should be bounded to the host OS and the container.
+The container is starting as root user.
 ```Bash
-sudo docker run -it -u 0 --privileged -p 8888:8888 continuumio/anaconda3 /bin/bash
+sudo docker run -it -u 0 --privileged continuumio/anaconda3 /bin/bash
 ```
 Thereafter, the work will be done on the container.
 ### Install additional software
