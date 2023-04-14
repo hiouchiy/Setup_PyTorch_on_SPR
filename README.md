@@ -1,8 +1,8 @@
 
 # PyTorch Setup Guide on 4th Gen Intel Xeon Scalable Processor
-This repository provides a semantic segmentation model created using open data called [Semantic Drone Dataset](https://www.kaggle.com/datasets/bulentsiyah/semantic-drone-dataset).
+This repository provides a setup guidance of PyTorch on 4th gen Xeon to enable its new AI accelerator called AMX.
 
-It also introduces the source code for fine tuning based on the models and techniques to speed up the inference of the models.
+In addition, benchmark instructions for Resnet50, Mask R-CNN and Stable Diffusion are also described. 
 
 ## Prerequisites
 - Ubuntu 22.04 LTS (GNU/Linux 5.19.17-051917-generic x86_64)
@@ -51,13 +51,12 @@ pip install intel_extension_for_pytorch
 pip install transformers diffusers accelerate yacs opencv-python pycocotools defusedxml cityscapesscripts
 pip install -U numpy==1.19
 ```
-### Clone this repo
-```Bash
-cd ~
-git clone https://github.com/hiouchiy/Setup_PyTorch_on_SPR.git
-```
+## Benchmark
 ### Run Resnet50 training in FP32 and BF16
 ```
+cd ~
+git clone https://github.com/hiouchiy/Setup_PyTorch_on_SPR.git
+
 # FP32 (without AMX)
 numactl -m 0 -N 0 python train_rn50_fp32.py
 
